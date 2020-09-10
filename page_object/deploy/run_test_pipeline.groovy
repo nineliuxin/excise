@@ -1,13 +1,11 @@
 pipeline {
     agent {
         node{
-            ## 构建在MyNewNode的slave节点上运行
             label 'MyNewNode'
             customWorkspace "pipelineWorkspace"
         }
     }
     stages {
-        ## 流水线触发begin、running、finish
         stage("同步源码"){
             git([url:'https://github.com/nineliuxin/excise.git',branch:'${branch}'])
         }
