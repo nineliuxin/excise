@@ -1,0 +1,42 @@
+loginByPassword:
+  - locator: tv_login_by_phone_or_others
+    by: id
+    action: click
+  - locator: tv_login_with_account
+    by: id
+    action: click
+  - element: login_account
+    by: id
+    action: sendKeys
+    text: ${var1}
+  - element: login_password
+    by: id
+    action: sendKeys
+    text: ${var2}
+  - by: id
+    locator: button_next
+    action: click
+back:
+  - locator: //*[contains(@resource-id, 'iv_close') or contains(@resource-id, 'iv_action_back')]
+    by: xpath
+    action: click
+getErrorMsg:
+  - locator: md_content
+    by: id
+    action: text
+  - locator: //*[@text="确定"]
+    by: xpath
+    action: click
+
+elements:
+  login_account:
+    android:
+      by: id
+      locator: login_account
+    ios:
+      by: xpath
+      locator: dddddd
+  login_password:
+    android:
+      by: id
+      locator: login_password

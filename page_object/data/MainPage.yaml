@@ -1,0 +1,12 @@
+gotoSelected:
+  - locator: //*[@text='自选']
+    by: xpath
+    action: click
+gotoSearch:
+  - locator: tv_search
+    by: id
+    action: click
+gotoProfile:
+  - locator: user_profile_icon
+    by: id
+    action: click

@@ -1,0 +1,39 @@
+search:
+  - locator: android.widget.EditText
+    by: class name
+    action: sendkeys
+    text: ${keyword}
+
+cancel:
+  - locator: //*[@text="取消"]
+    by: xpath
+    action: click
+
+searchByUser:
+  - locator: android.widget.EditText
+    by: class name
+    action: sendkeys
+    text: ${keyword}
+  - locator: //*[@text="用户"]
+    by: xpath
+    action: click
+
+addToSelected:
+  - locator: "//*[contains(@resource-id, 'stockCode') and contains(@text,'${keyword}')]/../../..//*[contains(@resource-id, 'follow_btn')]"
+    by: xpath
+    action: click
+
+removeFromSelected:
+  - locator: "//*[contains(@resource-id, 'stockCode') and contains(@text,'${keyword}')]/../../..//*[contains(@resource-id, 'followed_btn')]"
+    by: xpath
+    action: clcik
+
+isInSelected:
+  - locator: "//*[contains(@resource-id, 'stockCode') and contains(@text,'${keyword}')]/../../..//*[contains(@resource-id, 'follow')]"
+    by: xpath
+    action: getelement
+
+isFollowed:
+  - locator: "//*[contains(@resource-id, 'rl_name_info')]//*[@text='${keyword}']/../..//*[contains(@resource-id, '_btn')]"
+    by: xpath
+    action: getelement

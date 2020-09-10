@@ -1,0 +1,12 @@
+restart_web:
+  url: https://xueqiu.com/
+  implicitly_wait: 10
+  caps:
+    chrome:
+      browserName: chrome
+      platform: windows
+    firefox:
+      browserName: firefox
+      platform: windows
+
+platform: chrome
