@@ -1,5 +1,5 @@
 
-    node{
+    node('$node'){
         stage("同步源码"){
             git([url:'https://github.com/nineliuxin/excise.git',branch:'${branch}'])
         }
