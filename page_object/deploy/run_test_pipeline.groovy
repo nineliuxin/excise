@@ -1,11 +1,5 @@
-pipeline {
-    agent {
-        node{
-            label 'MyNewNode'
-            customWorkspace "pipelineWorkspace"
-        }
-    }
-    stages {
+
+    node{
         stage("同步源码"){
             git([url:'https://github.com/nineliuxin/excise.git',branch:'${branch}'])
         }
@@ -27,4 +21,3 @@ pipeline {
             '''
         }
     }
-}
