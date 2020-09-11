@@ -17,7 +17,9 @@
                     sed -i "s/device_ip/${device_ip}/g" driver.yaml
                 fi
                 cd $PRO_PATH/testcases
-                ~/.pyenv/shims/pytest -v test_login.py --alluredir ../allure_results
+                python --version
+                pytest --version
+                pytest -v test_login.py --alluredir ../allure_results
                 allure serve ../allure_results
             '''
         }
