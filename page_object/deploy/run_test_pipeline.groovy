@@ -5,8 +5,7 @@
         }
         stage("运行测试代码"){
             sh '''
-                . ~/.bash_profile
-                . /etc/profile
+                source .bash_profile
                 cd page_object
                 export PRO_PATH=`pwd`
                 export os_type=`uname`
@@ -18,7 +17,6 @@
                 fi
                 cd $PRO_PATH/testcases
                 python --version
-                pytest --version
                 pytest -v test_login.py --alluredir ../allure_results
                 allure serve ../allure_results
             '''
