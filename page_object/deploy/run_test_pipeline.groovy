@@ -6,6 +6,7 @@
         stage("运行测试代码"){
             sh '''
                 . ~/.bash_profile
+                . /etc/profile
                 cd page_object
                 export PRO_PATH=`pwd`
                 export os_type=`uname`
