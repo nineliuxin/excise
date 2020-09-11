@@ -11,9 +11,9 @@
                 export os_type=`uname`
                 cd data
                 if [[ "${os_type}" == "Darwin" ]]; then
-                    sed -i "" "s/device_ip/${device_ip}/g" driver.yml
+                    sed -i "" "s/device_ip/${device_ip}/g" driver.yaml
                 else
-                    sed -i "s/device_ip/${device_ip}/g" driver.yml
+                    sed -i "s/device_ip/${device_ip}/g" driver.yaml
                 fi
                 cd $PRO_PATH/testcases
                 pytest -v test_login.py --alluredir ../allure_results
