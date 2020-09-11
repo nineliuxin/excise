@@ -1,7 +1,7 @@
 
     node('new'){
         stage("同步源码"){
-            git([url:'https://github.com/nineliuxin/excise.git',credentialsId:'${credentials_id}',branch:'${branch}'])
+            git([url:'https://github.com/nineliuxin/excise.git',credentialsId:'2e749226-84a2-418a-aadd-104500ed68a3',branch:'master'])
         }
         stage("运行测试代码"){
             sh '''
