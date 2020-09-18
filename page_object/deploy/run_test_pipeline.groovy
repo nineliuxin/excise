@@ -7,7 +7,6 @@
             sh '''
                 . ~/.bash_profile
                 . /etc/profile
-                export PYTHONPATH=`pwd`
                 cd page_object
                 export PRO_PATH=`pwd`
                 export os_type=`uname`
