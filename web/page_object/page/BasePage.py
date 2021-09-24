@@ -1,7 +1,7 @@
 import os
 from time import sleep
 
-import autoit
+#import autoit
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
