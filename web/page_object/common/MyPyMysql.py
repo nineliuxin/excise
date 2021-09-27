@@ -4,12 +4,12 @@ import time
 
 class MyPyMysql:
     def __init__(self, host, port, username, password, db, charset='utf8'):
-        self.host = '10.12.27.205'  # mysql主机地址
-        self.port = 3306  # mysql端口
-        self.username = 'rong'  # mysql远程连接用户名
-        self.password = 'qa_ins'  # mysql远程连接密码
-        self.db = 'aphrodite_app'  # mysql使用的数据库名
-        self.charset = utf8  # mysql使用的字符编码,默认为utf8
+        self.host = host  # mysql主机地址
+        self.port = port  # mysql端口
+        self.username = username  # mysql远程连接用户名
+        self.password = password  # mysql远程连接密码
+        self.db = db  # mysql使用的数据库名
+        self.charset = charset  # mysql使用的字符编码,默认为utf8
         self.pymysql_connect()  # __init__初始化之后，执行的函数
 
     def pymysql_connect(self):
@@ -24,7 +24,7 @@ class MyPyMysql:
                                     )
         # 连接mysql后执行的函数
         self.asynchronous()
-
+    '''
     def run(self, nmin, nmax):
         # 创建游标
         self.cur = self.conn.cursor()
@@ -46,7 +46,7 @@ class MyPyMysql:
 
         # 提交数据,必须提交，不然数据不会保存
         self.conn.commit()
-
+    '''
     def asynchronous(self):
         # g_l 任务列表
         # 定义了异步的函数: 这里用到了一个gevent.spawn方法
@@ -61,5 +61,5 @@ class MyPyMysql:
 
 if __name__ == '__main__':
     start_time = time.time()  # 计算程序开始时间
-    st = MyPyMysql('192.168.11.102', 3306, 'py123', 'py123', 'db20')  # 实例化类，传入必要参数
+    st = MyPyMysql('10.12.27.205', 3306, 'rong', 'qa-ins', 'aphrodite_app')  # 实例化类，传入必要参数
     print('程序耗时{:.2f}'.format(time.time() - start_time))  # 计算程序总耗时
