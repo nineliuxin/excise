@@ -23,7 +23,7 @@ class MyPyMysql:
                                     charset=self.charset
                                     )
         # 连接mysql后执行的函数
-        self.asynchronous()
+     #   self.asynchronous()
     '''
     def run(self, nmin, nmax):
         # 创建游标
@@ -47,6 +47,7 @@ class MyPyMysql:
         # 提交数据,必须提交，不然数据不会保存
         self.conn.commit()
     '''
+    '''
     def asynchronous(self):
         # g_l 任务列表
         # 定义了异步的函数: 这里用到了一个gevent.spawn方法
@@ -57,7 +58,7 @@ class MyPyMysql:
         gevent.joinall(g_l)
         self.cur.close()  # 关闭游标
         self.conn.close()  # 关闭pymysql连接
-
+    '''
 
 if __name__ == '__main__':
     start_time = time.time()  # 计算程序开始时间

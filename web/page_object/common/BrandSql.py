@@ -10,3 +10,18 @@ class BrandSql(MyPyMysql):
         if content:
             print('成功插入第{}条数据'.format(num - 1))
         self.conn.commit()
+        self.cur.close()  # 关闭游标
+        self.conn.close()  # 关闭pymysql连接
+
+    def select_brand_id_by_brandname(self, brandname):
+        sql = "select id from brand where brandname=%s" % brandname
+        self.cur = self.conn.cursor()
+        try:
+            # 执行SQL语句
+            self.cur.execute(sql)
+            # 获取所有记录列表
+            result = self.cur.fetchone()
+            return result
+        except:
+            print("Error: unable to fetch data")
+

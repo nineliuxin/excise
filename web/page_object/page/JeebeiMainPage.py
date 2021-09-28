@@ -1,4 +1,6 @@
 from web.page_object.page.BasePage import BasePage
+from web.page_object.page.BrandPage import BrandPage
+
 
 class JeebeiMainPage(BasePage):
     def gotoBrand(self):

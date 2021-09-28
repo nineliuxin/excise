@@ -1,5 +1,6 @@
 import pytest
 
+from web.page_object.common.BrandSql import BrandSql
 from web.page_object.page.JeebeiWeb import JeebeiWeb
 from web.page_object.testcases.BaseTestCase import BaseTestCase
 
@@ -12,10 +13,12 @@ class TestBrand(BaseTestCase):
     def test_select_all_brands(self):
         # todo
         self.brandPage = self.mainPage.gotoBrand()
-        return self
+        result = self.brandPage.select_all_brands()
+        bsql = BrandSql('10.12.27.205', 3306, 'rong', 'qa-ins', 'aphrodite_app')
+        bsql.insertBrand(self, data_list=result)
 
     def teardown_method(self):
-        self.searchPage.back()
+        pass
 
     def teardown_class(self):
         self.mainPage.quit()
