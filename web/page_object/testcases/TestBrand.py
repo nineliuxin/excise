@@ -12,9 +12,9 @@ class TestBrand(BaseTestCase):
 
     def test_select_all_brands(self):
         # todo
-        #self.brandPage = self.mainPage.gotoBrand()
-        #result = self.brandPage.select_all_brands()
-        result = [('初良优品', '', '', 0)]
+        self.brandPage = self.mainPage.gotoBrand()
+        result = self.brandPage.select_all_brands()
+        #result = [('初良优品', '', '', 0)]
         print(result)
         bsql = BrandSql('10.12.27.205', 3306, 'rong', 'qa-ins', 'aphrodite_app')
         bsql.insertBrand(result)

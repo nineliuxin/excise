@@ -11,7 +11,7 @@ class BrandPage(BasePage):
         all_brands = self.driver.find_elements_by_xpath("//div[@class='met-img']//a")
         sum = len(all_brands)
         data_list = []
-        for i in range(0, 1):
+        for i in range(18, 19):
             brand_name = all_brands[i].get_attribute("title")
             brand_img = ''
             try:
@@ -23,7 +23,7 @@ class BrandPage(BasePage):
             finally:
                 # todo 英文名称先写死为空
                 brand_english_name = ''
-                result = (brand_name, brand_english_name, brand_img, 0)
+                result = (brand_name, brand_english_name, brand_img)
                 data_list.append(result)
         return data_list
 
