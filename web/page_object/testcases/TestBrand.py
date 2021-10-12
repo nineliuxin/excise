@@ -17,7 +17,7 @@ class TestBrand(BaseTestCase):
         #result = [('初良优品', '', '', 0)]
         print(result)
         bsql = BrandSql('10.12.27.205', 3306, 'rong', 'qa-ins', 'aphrodite_app')
-        bsql.insertBrand(result)
+        bsql.insertBrand(*result)
 
     def teardown_method(self):
         pass

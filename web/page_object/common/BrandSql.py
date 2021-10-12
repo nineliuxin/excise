@@ -3,9 +3,11 @@ import time
 
 class BrandSql(MyPyMysql):
     def insertBrand(self, *data_list):
-        sql = "insert into `brand`(`brand_name`,`brand_english_name`,`brand_img`) values %s"
-        num = len(data_list)
+        sql = "insert into `brand`(`brand_name`,`brand_english_name`,`brand_img`) values (%s, %s, %s)"
+        #num = len(data_list)
         self.cur = self.conn.cursor()
+        #for data in data_list:
+        #    print(data)
         self.cur.executemany(sql, data_list)
         #if content:
         #   print('成功插入')
